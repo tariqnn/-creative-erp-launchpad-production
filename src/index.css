@@ -1,0 +1,331 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* WP Experts Design System */
+
+@layer base {
+  :root {
+    /* Creative ERP Brand Identity Colors - Orange & Blue Theme */
+    --primary: 25 95% 53%; /* Orange #f97316 - Primary Brand Color */
+    --primary-foreground: 0 0% 100%;
+    --primary-deep: 20 90% 48%; /* Orange #ea580c - Darker Orange */
+    
+    /* Make everything orange and blue */
+    --secondary: 221 83% 53%; /* Blue #2563eb - Secondary Brand Color */
+    --secondary-foreground: 0 0% 100%;
+    --accent: 25 95% 53%; /* Orange #f97316 - Accent Color */
+    --accent-foreground: 0 0% 100%;
+    
+    /* Blue Brand Colors */
+    --brand-blue-50: 214 100% 97%; /* #eff6ff */
+    --brand-blue-100: 214 95% 93%; /* #dbeafe */
+    --brand-blue-200: 213 97% 87%; /* #bfdbfe */
+    --brand-blue-300: 212 96% 78%; /* #93c5fd */
+    --brand-blue-400: 213 94% 68%; /* #60a5fa */
+    --brand-blue-500: 217 91% 60%; /* #3b82f6 */
+    --brand-blue-600: 221 83% 53%; /* #2563eb - Primary Blue */
+    --brand-blue-700: 224 76% 48%; /* #1d4ed8 */
+    --brand-blue-800: 226 71% 40%; /* #1e40af */
+    --brand-blue-900: 224 64% 33%; /* #1e3a8a - Dark Blue */
+    
+    /* Orange Brand Colors */
+    --brand-orange-50: 33 100% 96%; /* #fff7ed */
+    --brand-orange-100: 33 100% 94%; /* #ffedd5 */
+    --brand-orange-200: 33 100% 90%; /* #fed7aa */
+    --brand-orange-300: 33 100% 84%; /* #fdba74 */
+    --brand-orange-400: 33 100% 75%; /* #fb923c */
+    --brand-orange-500: 25 95% 53%; /* #f97316 - Primary Orange */
+    --brand-orange-600: 20 90% 48%; /* #ea580c */
+    --brand-orange-700: 20 90% 43%; /* #c2410c */
+    --brand-orange-800: 20 90% 38%; /* #9a3412 */
+    --brand-orange-900: 20 90% 33%; /* #7c2d12 */
+    
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%; /* #171717 */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+    
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 25 95% 53%;
+    
+    /* Legacy Colors for Compatibility */
+    --blue-900: 215 25% 27%; /* #1e3a8a */
+    --orange-500: 25 95% 53%; /* #f97316 */
+    --orange-600: 20 90% 48%; /* #ea580c */
+    --purple-600: 262 83% 58%; /* #9333ea */
+    --teal-400: 174 100% 70%; /* #2dd4bf */
+    --pink-400: 330 81% 60%; /* #f472b6 */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
+    
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+    
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+    
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 90%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 90%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 25 95% 53%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    direction: rtl;
+  }
+
+  [dir="rtl"] .ltr-content {
+    direction: ltr;
+  }
+}
+
+@layer components {
+  /* Creative ERP Brand Identity Components */
+  
+  /* Typography */
+  .font-serif {
+    font-family: 'Georgia', 'Times New Roman', serif;
+  }
+  
+  .font-brand {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    font-weight: 600;
+  }
+  
+  /* Brand Gradients - Orange & Blue Theme */
+  .gradient-brand-primary {
+    background: linear-gradient(135deg, hsl(var(--brand-orange-500)) 0%, hsl(var(--brand-orange-600)) 50%, hsl(var(--brand-orange-700)) 100%);
+  }
+  
+  .gradient-brand-secondary {
+    background: linear-gradient(135deg, hsl(var(--brand-blue-600)) 0%, hsl(var(--brand-blue-700)) 50%, hsl(var(--brand-blue-800)) 100%);
+  }
+  
+  .gradient-brand-hero {
+    background: linear-gradient(135deg, hsl(var(--brand-orange-500)) 0%, hsl(var(--brand-blue-600)) 100%);
+  }
+  
+  .gradient-brand-accent {
+    background: linear-gradient(45deg, hsl(var(--brand-orange-400)) 0%, hsl(var(--brand-blue-500)) 100%);
+  }
+  
+  /* Brand Cards */
+  .card-brand {
+    @apply bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300;
+    background: linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+  }
+  
+  .card-brand:hover {
+    border-color: rgba(37, 99, 235, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  /* Brand Buttons - Orange & Blue Theme */
+  .btn-brand-primary {
+    @apply px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--brand-orange-500)) 0%, hsl(var(--brand-orange-600)) 100%);
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+  }
+  
+  .btn-brand-primary:hover {
+    background: linear-gradient(135deg, hsl(var(--brand-orange-600)) 0%, hsl(var(--brand-orange-700)) 100%);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+    transform: translateY(-1px);
+  }
+  
+  .btn-brand-secondary {
+    @apply px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--brand-blue-600)) 0%, hsl(var(--brand-blue-700)) 100%);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  }
+  
+  .btn-brand-secondary:hover {
+    background: linear-gradient(135deg, hsl(var(--brand-blue-700)) 0%, hsl(var(--brand-blue-800)) 100%);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    transform: translateY(-1px);
+  }
+  
+  /* Brand Badges */
+  .badge-brand-blue {
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+    background: hsl(var(--brand-blue-100));
+    color: hsl(var(--brand-blue-800));
+    border: 1px solid hsl(var(--brand-blue-200));
+  }
+  
+  .badge-brand-orange {
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+    background: hsl(var(--brand-orange-100));
+    color: hsl(var(--brand-orange-800));
+    border: 1px solid hsl(var(--brand-orange-200));
+  }
+  
+  /* Brand Patterns */
+  .pattern-dots {
+    background-image: radial-gradient(circle, hsl(var(--brand-blue-200)) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .pattern-grid {
+    background-image: 
+      linear-gradient(hsl(var(--brand-blue-100)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--brand-blue-100)) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  /* Brand Animations */
+  .animate-brand-pulse {
+    animation: brandPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-brand-float {
+    animation: brandFloat 3s ease-in-out infinite;
+  }
+  
+  .animate-brand-glow {
+    animation: brandGlow 2s ease-in-out infinite alternate;
+  }
+  
+  /* Brand Shadows */
+  .shadow-brand {
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.1), 0 10px 10px -5px rgba(37, 99, 235, 0.04);
+  }
+  
+  .shadow-brand-lg {
+    box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.25);
+  }
+  
+  .shadow-brand-orange {
+    box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.1), 0 10px 10px -5px rgba(249, 115, 22, 0.04);
+  }
+  
+  /* Brand Borders */
+  .border-brand {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, hsl(var(--brand-blue-600)), hsl(var(--brand-orange-500))) border-box;
+  }
+  
+  .border-brand-dashed {
+    border: 2px dashed hsl(var(--brand-blue-300));
+  }
+  
+  /* Brand Backgrounds */
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--brand-blue-50)) 0%, 
+      hsl(var(--brand-orange-50)) 50%, 
+      hsl(var(--brand-blue-50)) 100%);
+  }
+  
+  .bg-brand-mesh {
+    background: 
+      radial-gradient(circle at 20% 80%, hsl(var(--brand-blue-100)) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--brand-orange-100)) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, hsl(var(--brand-blue-50)) 0%, transparent 50%);
+  }
+}
+
+@keyframes brandPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes brandFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes brandGlow {
+  0% {
+    box-shadow: 0 0 5px hsl(var(--brand-blue-400));
+  }
+  100% {
+    box-shadow: 0 0 20px hsl(var(--brand-blue-400)), 0 0 30px hsl(var(--brand-blue-400));
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}

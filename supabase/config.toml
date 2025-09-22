@@ -1,0 +1,4 @@
+project_id = "tpopwklrqwkkprefbyls"
+
+[functions.submit-demo]
+verify_jwt = false
