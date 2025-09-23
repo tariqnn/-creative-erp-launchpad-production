@@ -428,7 +428,7 @@ export const WebDevelopment = () => {
               <StaggeredItem>
                 <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all duration-300 relative">
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-orange-500 text-white px-4 py-1">Most Popular</Badge>
+                    <Badge className="bg-blue-500 text-white px-4 py-1">Most Popular</Badge>
                   </div>
                   <CardHeader className="text-center pb-4 pt-8">
                     <CardTitle className="text-2xl font-bold text-gray-900">Standard Business / Ecommerce</CardTitle>
@@ -436,7 +436,7 @@ export const WebDevelopment = () => {
                   </CardHeader>
                   <CardContent className="text-center">
                     <div className="mb-6">
-                      <div className="text-4xl font-bold text-orange-600 mb-2">$250 - $400</div>
+                      <div className="text-4xl font-bold text-blue-600 mb-2">$250 - $400</div>
                       <div className="text-lg text-gray-600 mb-1">177.50 - 284.00 JD</div>
                     </div>
                     <ul className="text-left space-y-3 mb-8">
@@ -461,7 +461,7 @@ export const WebDevelopment = () => {
                         <span className="text-gray-700">Payment integration</span>
                       </li>
                     </ul>
-                    <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white">
+                    <Button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white">
                       Get Started
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
@@ -502,7 +502,7 @@ export const WebDevelopment = () => {
                         <span className="text-gray-700">24/7 monitoring</span>
                       </li>
                     </ul>
-                    <Button className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white">
+                    <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
                       Get Started
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>

@@ -243,7 +243,7 @@ export const Hero = ({ lang }: HeroProps) => {
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen py-12 lg:py-20">
           {/* Main Content */}
           <div className="space-y-8">
           {/* Logo and Main headline */}
@@ -256,7 +256,7 @@ export const Hero = ({ lang }: HeroProps) => {
             <AnimatedWrapper delay={0.2}>
               <div className="space-y-4">
                 <motion.h1 
-                  className="text-5xl md:text-6xl font-bold leading-tight"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
@@ -285,7 +285,7 @@ export const Hero = ({ lang }: HeroProps) => {
             {/* Description */}
             <AnimatedWrapper delay={0.4} direction="up">
               <motion.p 
-                className="text-lg text-gray-700 max-w-2xl leading-relaxed"
+                className="text-base sm:text-lg text-gray-700 max-w-2xl leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
@@ -391,7 +391,12 @@ export const Hero = ({ lang }: HeroProps) => {
                   >
                     📞
                   </motion.span>
-                  <span className="text-gray-800 font-semibold">+962 79 555 0073</span>
+                  <a 
+                    href="tel:+962795550073"
+                    className="text-gray-800 font-semibold hover:text-green-600 transition-colors duration-300 cursor-pointer"
+                  >
+                    +962795550073
+                  </a>
                 </motion.div>
               </motion.div>
             </AnimatedWrapper>

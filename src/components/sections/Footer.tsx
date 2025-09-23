@@ -26,7 +26,7 @@ export const Footer = ({ lang, onLanguageChange }: FooterProps) => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-deep bg-clip-text text-transparent">
+            <h3 className="text-2xl font-bold text-black">
               {t.creativeNetwork}
             </h3>
             <p className="text-muted-foreground">
@@ -72,13 +72,29 @@ export const Footer = ({ lang, onLanguageChange }: FooterProps) => {
             <h4 className="font-semibold text-foreground">
               {t.contact}
             </h4>
-            <div className="space-y-2 text-muted-foreground">
-              <p>info@creativenetwork.com</p>
-              <p>+1 (555) 123-4567</p>
-              <LanguageToggle 
-                currentLang={lang}
-                onLanguageChange={onLanguageChange}
-              />
+            <div className="space-y-3 text-muted-foreground">
+              <div>
+                <a 
+                  href="mailto:info@creativenetwork.com"
+                  className="hover:text-blue-600 transition-colors duration-300 cursor-pointer block"
+                >
+                  info@creativenetwork.com
+                </a>
+              </div>
+              <div>
+                <a 
+                  href="tel:+962795550073"
+                  className="hover:text-green-600 transition-colors duration-300 cursor-pointer block"
+                >
+                  +962795550073
+                </a>
+              </div>
+              <div className="pt-2">
+                <LanguageToggle 
+                  currentLang={lang}
+                  onLanguageChange={onLanguageChange}
+                />
+              </div>
             </div>
           </div>
         </div>

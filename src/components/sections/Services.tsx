@@ -57,13 +57,13 @@ export const Services = ({ lang }: ServicesProps) => {
     <section className="py-20 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-blue-600">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-blue-600">
             {t.servicesTitle}
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full" />
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -78,7 +78,7 @@ export const Services = ({ lang }: ServicesProps) => {
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <Icon className="h-8 w-8 text-white" />
                   </div>
-                  <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors duration-300">
+                  <CardTitle className="text-2xl font-bold">
                     {service.title}
                   </CardTitle>
                   <CardDescription className="text-muted-foreground">

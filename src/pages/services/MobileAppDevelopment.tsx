@@ -306,7 +306,7 @@ export const MobileAppDevelopment = () => {
                           </div>
                         </div>
                         <div className="flex gap-2">
-                          <Button className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white">
+                          <Button className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white">
                             View Project
                             <ExternalLink className="ml-2 w-4 h-4" />
                           </Button>
@@ -403,7 +403,7 @@ export const MobileAppDevelopment = () => {
                         <span className="text-gray-700">Basic support and updates</span>
                       </li>
                     </ul>
-                    <Button className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white">
+                    <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
                       Get Started
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
@@ -414,7 +414,7 @@ export const MobileAppDevelopment = () => {
               <StaggeredItem>
                 <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all duration-300 relative">
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-orange-500 text-white px-4 py-1">Most Popular</Badge>
+                    <Badge className="bg-blue-500 text-white px-4 py-1">Most Popular</Badge>
                   </div>
                   <CardHeader className="text-center pb-4 pt-8">
                     <CardTitle className="text-2xl font-bold text-gray-900">Medium Complexity App</CardTitle>
@@ -422,7 +422,7 @@ export const MobileAppDevelopment = () => {
                   </CardHeader>
                   <CardContent className="text-center">
                     <div className="mb-6">
-                      <div className="text-4xl font-bold text-orange-600 mb-2">$4,000 - $7,500</div>
+                      <div className="text-4xl font-bold text-blue-600 mb-2">$4,000 - $7,500</div>
                       <div className="text-lg text-gray-600 mb-1">2,840.00 - 5,325.00 JD</div>
                     </div>
                     <ul className="text-left space-y-3 mb-8">
@@ -447,7 +447,7 @@ export const MobileAppDevelopment = () => {
                         <span className="text-gray-700">Advanced UI/UX design</span>
                       </li>
                     </ul>
-                    <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white">
+                    <Button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white">
                       Get Started
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>

@@ -95,10 +95,10 @@ export const Contact = ({ lang }: ContactProps) => {
     <section className="py-20 px-4 bg-secondary/30">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-deep bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
             {t.contactTitle}
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary-deep mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-700 mx-auto rounded-full" />
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -117,6 +117,26 @@ export const Contact = ({ lang }: ContactProps) => {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
+                {/* Contact Photo */}
+                <div className="mb-8">
+                  <div className="relative rounded-2xl overflow-hidden shadow-lg">
+                    <img 
+                      src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=400&fit=crop&crop=center"
+                      alt={lang === 'en' ? 'Contact Us - Creative Network Team' : 'اتصل بنا - فريق الشبكة الإبداعية'}
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <h3 className="text-xl font-bold mb-1">
+                        {lang === 'en' ? 'Get in Touch' : 'تواصل معنا'}
+                      </h3>
+                      <p className="text-sm opacity-90">
+                        {lang === 'en' ? 'We\'re here to help you succeed' : 'نحن هنا لمساعدتك على النجاح'}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-deep rounded-full flex items-center justify-center">
                     <Mail className="h-6 w-6 text-white" />
@@ -125,7 +145,12 @@ export const Contact = ({ lang }: ContactProps) => {
                     <p className="font-medium">
                       {lang === 'en' ? 'Email' : 'البريد الإلكتروني'}
                     </p>
-                    <p className="text-muted-foreground">{import.meta.env.VITE_BOOKING_EMAIL || "info@creativenetworkservices.com"}</p>
+                    <a 
+                      href="mailto:info@creativenetworkservices.com"
+                      className="text-muted-foreground hover:text-blue-600 transition-colors duration-300 cursor-pointer"
+                    >
+                      {import.meta.env.VITE_BOOKING_EMAIL || "info@creativenetworkservices.com"}
+                    </a>
                   </div>
                 </div>
                 
@@ -137,7 +162,12 @@ export const Contact = ({ lang }: ContactProps) => {
                     <p className="font-medium">
                       {lang === 'en' ? 'Phone' : 'الهاتف'}
                     </p>
-                    <p className="text-muted-foreground">+962 79 555 0073</p>
+                    <a 
+                      href="tel:+962795550073"
+                      className="text-muted-foreground hover:text-green-600 transition-colors duration-300 cursor-pointer"
+                    >
+                      +962795550073
+                    </a>
                   </div>
                 </div>
                 

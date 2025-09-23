@@ -307,7 +307,7 @@ export const EnterpriseERP = () => {
                             ))}
                           </div>
                         </div>
-                        <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white">
+                        <Button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white">
                           View Project
                           <ExternalLink className="ml-2 w-4 h-4" />
                         </Button>
@@ -483,7 +483,7 @@ export const EnterpriseERP = () => {
               <StaggeredItem>
                 <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all duration-300 relative">
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-orange-500 text-white px-3 py-1 text-xs">Popular</Badge>
+                    <Badge className="bg-blue-500 text-white px-3 py-1 text-xs">Popular</Badge>
                   </div>
                   <CardHeader className="text-center pb-4 pt-6">
                     <CardTitle className="text-xl font-bold text-gray-900">Zoho One</CardTitle>
@@ -491,7 +491,7 @@ export const EnterpriseERP = () => {
                   </CardHeader>
                   <CardContent className="text-center">
                     <div className="mb-6">
-                      <div className="text-3xl font-bold text-orange-600 mb-2">$18.50 - $22.50</div>
+                      <div className="text-3xl font-bold text-blue-600 mb-2">$18.50 - $22.50</div>
                       <div className="text-lg text-gray-600 mb-1">13.14 - 15.98 JD</div>
                     </div>
                     <ul className="text-left space-y-2 mb-6">
@@ -508,7 +508,7 @@ export const EnterpriseERP = () => {
                         <span className="text-sm text-gray-700">Complete business suite</span>
                       </li>
                     </ul>
-                    <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white">
+                    <Button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white">
                       Get Started
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
@@ -541,7 +541,7 @@ export const EnterpriseERP = () => {
                         <span className="text-sm text-gray-700">Microsoft ecosystem</span>
                       </li>
                     </ul>
-                    <Button className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white">
+                    <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
                       Get Started
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
@@ -578,7 +578,7 @@ export const EnterpriseERP = () => {
                         <span className="text-sm text-gray-700">Enterprise features</span>
                       </li>
                     </ul>
-                    <Button className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white">
+                    <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
                       Get Started
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
@@ -611,7 +611,7 @@ export const EnterpriseERP = () => {
                         <span className="text-sm text-gray-700">Cost-effective solution</span>
                       </li>
                     </ul>
-                    <Button className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white">
+                    <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
                       Get Started
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>

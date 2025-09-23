@@ -4,9 +4,10 @@ interface LogoProps {
   size?: 'sm' | 'md' | 'lg';
   className?: string;
   onClick?: () => void;
+  animate?: boolean;
 }
 
-export const Logo = ({ size = 'md', className = '', onClick }: LogoProps) => {
+export const Logo = ({ size = 'md', className = '', onClick, animate = false }: LogoProps) => {
   const sizeClasses = {
     sm: 'w-8 h-8',
     md: 'w-10 h-10',
@@ -31,13 +32,13 @@ export const Logo = ({ size = 'md', className = '', onClick }: LogoProps) => {
       <motion.div
         className={`${sizeClasses[size]} bg-blue-600 rounded-full flex items-center justify-center relative overflow-hidden shadow-brand`}
         initial={{ rotate: 0 }}
-        animate={{ rotate: 360 }}
-        transition={{ 
+        animate={animate ? { rotate: 360 } : { rotate: 0 }}
+        transition={animate ? { 
           duration: 2, 
           repeat: Infinity, 
           ease: "linear",
           delay: 0.5 
-        }}
+        } : { duration: 0 }}
         whileHover={{ 
           scale: 1.1,
           rotate: [0, 360, 0],

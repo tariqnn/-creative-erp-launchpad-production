@@ -1,8 +1,9 @@
 import { Hero } from '@/components/sections/Hero';
 import { Services } from '@/components/sections/Services';
 import { HowItWorks } from '@/components/sections/HowItWorks';
-import { Pricing } from '@/components/sections/Pricing';
+import { ERPOnDemand } from '@/components/sections/ERPOnDemand';
 import { Contact } from '@/components/sections/Contact';
+import { MobileShortcuts } from '@/components/MobileShortcuts';
 import { Language } from '@/lib/i18n';
 
 interface IndexProps {
@@ -23,13 +24,16 @@ const Index = ({ lang, onLanguageChange }: IndexProps) => {
       
       <HowItWorks lang={lang} />
       
-      <section id="pricing">
-        <Pricing lang={lang} />
+      <section id="erp-on-demand">
+        <ERPOnDemand lang={lang} />
       </section>
       
       <section id="contact">
         <Contact lang={lang} />
       </section>
+      
+      {/* Mobile Shortcuts */}
+      <MobileShortcuts lang={lang} />
     </>
   );
 };

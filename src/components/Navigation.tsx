@@ -13,14 +13,17 @@ interface NavigationProps {
 export const Navigation = ({ lang, onLanguageChange }: NavigationProps) => {
   const t = useTranslation(lang);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
 
   const handleNavigation = (href: string) => {
     if (href.startsWith('#')) {
       // Handle hash links for same page navigation
       if (href === '#home') {
         // Navigate to home page
+        setIsNavigating(true);
         window.history.pushState({}, '', '/');
         window.dispatchEvent(new CustomEvent('navigate', { detail: { page: 'home' } }));
+        setTimeout(() => setIsNavigating(false), 2000);
       } else {
         // Scroll to section on current page
         const element = document.getElementById(href.replace('#', ''));
@@ -30,12 +33,14 @@ export const Navigation = ({ lang, onLanguageChange }: NavigationProps) => {
       }
     } else {
       // Handle page navigation
+      setIsNavigating(true);
       let page = 'home';
       if (href === '/services') page = 'services';
       else if (href === '/blogs') page = 'blogs';
       
       window.history.pushState({}, '', href);
       window.dispatchEvent(new CustomEvent('navigate', { detail: { page } }));
+      setTimeout(() => setIsNavigating(false), 2000);
     }
     setIsMenuOpen(false);
   };
@@ -47,13 +52,14 @@ export const Navigation = ({ lang, onLanguageChange }: NavigationProps) => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <Logo 
             size="md"
             onClick={() => handleNavigation('#home')}
+            animate={isNavigating}
           />
           
           {/* Desktop Navigation */}

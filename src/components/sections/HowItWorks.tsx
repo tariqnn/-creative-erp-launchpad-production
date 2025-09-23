@@ -33,10 +33,10 @@ export const HowItWorks = ({ lang }: HowItWorksProps) => {
     <section className="py-20 px-4 bg-secondary/50">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-deep bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
             {t.howItWorksTitle}
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary-deep mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-700 mx-auto rounded-full" />
         </div>
         
         <div className="max-w-4xl mx-auto">
