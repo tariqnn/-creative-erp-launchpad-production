@@ -92,6 +92,7 @@ export const Contact = ({ lang }: ContactProps) => {
   };
 
   return (
+    {/* Updated Contact Section with Blue Branding */}
     <section className="py-20 px-4 bg-secondary/30">
       <div className="container mx-auto">
         <div className="text-center mb-16">
