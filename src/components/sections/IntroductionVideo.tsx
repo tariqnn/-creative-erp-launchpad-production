@@ -42,14 +42,23 @@ export const IntroductionVideo = ({ lang }: IntroductionVideoProps) => {
     };
   }, []);
 
-  const togglePlay = () => {
+  const togglePlay = async () => {
     if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
+      try {
+        if (isPlaying) {
+          videoRef.current.pause();
+          setIsPlaying(false);
+        } else {
+          await videoRef.current.play();
+          setIsPlaying(true);
+        }
+      } catch (error) {
+        console.error('Video play error:', error);
+        // If play fails, try to load the video first
+        if (videoRef.current.readyState < 2) {
+          videoRef.current.load();
+        }
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
@@ -111,109 +120,22 @@ export const IntroductionVideo = ({ lang }: IntroductionVideoProps) => {
               onMouseEnter={() => setShowControls(true)}
               onMouseLeave={() => setShowControls(false)}
             >
-              {/* Video Element with Lazy Loading */}
-              <video
-                ref={videoRef}
-                className="w-full h-auto"
-                poster="/images/video-poster.jpg"
-                muted={isMuted}
-                preload={isInView ? "metadata" : "none"}
-                onPlay={() => setIsPlaying(true)}
-                onPause={() => setIsPlaying(false)}
-                onEnded={() => setIsPlaying(false)}
-                onLoadedData={handleVideoLoad}
-                playsInline
-              >
-                {isInView && (
-                  <>
-                    <source src="https://drive.google.com/uc?export=download&id=1msJR5p134KX56km11qpPA5yjrbKgr7n-" type="video/mp4" />
-                    <source src="/videos/final.mp4" type="video/mp4" />
-                  </>
-                )}
-                Your browser does not support the video tag.
-              </video>
-
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
-
-              {/* Play/Pause Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.button
-                  onClick={togglePlay}
-                  className="w-20 h-20 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
-                  whileHover={shouldReduceMotion ? {} : { scale: 1.1 }}
-                  whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
-                >
-                  {isPlaying ? (
-                    <Pause className="w-8 h-8 text-gray-800 ml-1" />
-                  ) : (
-                    <Play className="w-8 h-8 text-gray-800 ml-1" />
-                  )}
-                </motion.button>
-              </div>
-
-              {/* Video Controls */}
-              <motion.div 
-                className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 transition-all duration-300 ${
-                  showControls ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ 
-                  opacity: showControls ? 1 : 0, 
-                  y: showControls ? 0 : 20 
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={togglePlay}
-                      className="text-white hover:bg-white/20"
-                    >
-                      {isPlaying ? (
-                        <Pause className="w-5 h-5" />
-                      ) : (
-                        <Play className="w-5 h-5" />
-                      )}
-                    </Button>
-                    
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={toggleMute}
-                      className="text-white hover:bg-white/20"
-                    >
-                      {isMuted ? (
-                        <VolumeX className="w-5 h-5" />
-                      ) : (
-                        <Volume2 className="w-5 h-5" />
-                      )}
-                    </Button>
-                  </div>
-
-                  <div className="flex items-center space-x-2">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={restartVideo}
-                      className="text-white hover:bg-white/20"
-                    >
-                      <RotateCcw className="w-5 h-5" />
-                    </Button>
-                    
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={toggleFullscreen}
-                      className="text-white hover:bg-white/20"
-                    >
-                      <Maximize className="w-5 h-5" />
-                    </Button>
-                  </div>
+              {/* Vimeo Video Embed */}
+              {isInView ? (
+                <iframe
+                  src="https://player.vimeo.com/video/1124356128?autoplay=0&muted=1&controls=1&loop=0"
+                  className="w-full h-auto min-h-[400px] md:min-h-[500px]"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="Creative Network Services Video"
+                />
+              ) : (
+                <div className="w-full h-[400px] md:h-[500px] bg-gray-200 flex items-center justify-center">
+                  <div className="text-gray-500">Loading video...</div>
                 </div>
-              </motion.div>
+              )}
+
             </div>
 
             {/* Video Description */}
