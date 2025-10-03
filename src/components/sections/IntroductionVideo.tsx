@@ -122,14 +122,28 @@ export const IntroductionVideo = ({ lang }: IntroductionVideoProps) => {
             >
               {/* Vimeo Video Embed */}
               {isInView ? (
-                <iframe
-                  src="https://player.vimeo.com/video/1124356128?autoplay=0&muted=1&controls=1&loop=0"
-                  className="w-full h-auto min-h-[400px] md:min-h-[500px]"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  title="Creative Network Services Video"
-                />
+                <div className="relative w-full h-[400px] md:h-[500px]">
+                  <iframe
+                    src="https://player.vimeo.com/video/1124356128?autoplay=0&muted=1&controls=1&loop=0&title=0&byline=0&portrait=0"
+                    className="absolute inset-0 w-full h-full"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    title="Creative Network Services Video"
+                    loading="lazy"
+                    onError={() => {
+                      console.log('Vimeo video failed to load, trying fallback...');
+                    }}
+                  />
+                  {/* Fallback content */}
+                  <div className="absolute inset-0 bg-gray-900 flex items-center justify-center">
+                    <div className="text-center text-white">
+                      <div className="text-4xl mb-4">🎬</div>
+                      <p className="text-lg mb-2">Video Loading...</p>
+                      <p className="text-sm text-gray-300">If video doesn't load, please refresh the page</p>
+                    </div>
+                  </div>
+                </div>
               ) : (
                 <div className="w-full h-[400px] md:h-[500px] bg-gray-200 flex items-center justify-center">
                   <div className="text-gray-500">Loading video...</div>
