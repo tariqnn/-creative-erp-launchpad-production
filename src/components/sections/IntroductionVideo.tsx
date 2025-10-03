@@ -120,23 +120,16 @@ export const IntroductionVideo = ({ lang }: IntroductionVideoProps) => {
               onMouseEnter={() => setShowControls(true)}
               onMouseLeave={() => setShowControls(false)}
             >
-              {/* Your YouTube Video Embed */}
+              {/* Your YouTube Video Embed - Clean */}
               <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.youtube.com/embed/mUqlunBU7Js?autoplay=0&mute=1&controls=1&loop=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3"
+                  src="https://www.youtube.com/embed/mUqlunBU7Js?autoplay=0&mute=1&controls=1&loop=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&title=0&byline=0&portrait=0"
                   className="absolute inset-0 w-full h-full"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   title="Creative Network Services Video"
                 />
-                {/* Overlay with your video info */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <div className="text-white">
-                    <h3 className="text-lg font-semibold mb-1">Creative Network Services</h3>
-                    <p className="text-sm opacity-90">Watch our introduction video to learn more about our services</p>
-                  </div>
-                </div>
               </div>
 
             </div>
