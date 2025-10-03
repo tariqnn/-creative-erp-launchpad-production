@@ -126,7 +126,7 @@ export const IntroductionVideo = ({ lang }: IntroductionVideoProps) => {
               >
                 {isInView && (
                   <>
-                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+                    <source src="https://drive.google.com/uc?export=download&id=1msJR5p134KX56km11qpPA5yjrbKgr7n-" type="video/mp4" />
                     <source src="/videos/final.mp4" type="video/mp4" />
                   </>
                 )}
