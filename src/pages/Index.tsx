@@ -1,6 +1,7 @@
 import { Hero } from '@/components/sections/Hero';
 import { Services } from '@/components/sections/Services';
 import { HowItWorks } from '@/components/sections/HowItWorks';
+import { IntroductionVideo } from '@/components/sections/IntroductionVideo';
 import { ERPOnDemand } from '@/components/sections/ERPOnDemand';
 import { Contact } from '@/components/sections/Contact';
 import { MobileShortcuts } from '@/components/MobileShortcuts';
@@ -23,6 +24,10 @@ const Index = ({ lang, onLanguageChange }: IndexProps) => {
       </section>
       
       <HowItWorks lang={lang} />
+      
+      <section id="introduction-video">
+        <IntroductionVideo lang={lang} />
+      </section>
       
       <section id="erp-on-demand">
         <ERPOnDemand lang={lang} />

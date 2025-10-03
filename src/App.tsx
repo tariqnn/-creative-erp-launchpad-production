@@ -4,15 +4,19 @@ import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/sections/Footer';
 import { CookieBanner } from '@/components/CookieBanner';
 import { Toaster } from '@/components/ui/toaster';
-import { Products } from '@/pages/Products';
-import { Blogs } from '@/pages/Blogs';
-import { BlogPost } from '@/pages/BlogPost';
-import { ERPServices } from '@/pages/ERPServices';
-import { WebDevelopment } from '@/pages/services/WebDevelopment';
-import { MobileAppDevelopment } from '@/pages/services/MobileAppDevelopment';
-import { EnterpriseERP } from '@/pages/services/EnterpriseERP';
-import { APIDevelopment } from '@/pages/services/APIDevelopment';
+// import { PerformanceMonitor } from '@/components/PerformanceMonitor';
+import { lazy, Suspense } from 'react';
 import Index from '@/pages/Index';
+
+// Lazy load pages for better performance
+const Products = lazy(() => import('@/pages/Products').then(module => ({ default: module.Products })));
+const Blogs = lazy(() => import('@/pages/Blogs').then(module => ({ default: module.Blogs })));
+const BlogPost = lazy(() => import('@/pages/BlogPost').then(module => ({ default: module.BlogPost })));
+const ERPServices = lazy(() => import('@/pages/ERPServices').then(module => ({ default: module.ERPServices })));
+const WebDevelopment = lazy(() => import('@/pages/services/WebDevelopment').then(module => ({ default: module.WebDevelopment })));
+const MobileAppDevelopment = lazy(() => import('@/pages/services/MobileAppDevelopment').then(module => ({ default: module.MobileAppDevelopment })));
+const EnterpriseERP = lazy(() => import('@/pages/services/EnterpriseERP').then(module => ({ default: module.EnterpriseERP })));
+const APIDevelopment = lazy(() => import('@/pages/services/APIDevelopment').then(module => ({ default: module.APIDevelopment })));
 import { Language } from '@/lib/i18n';
 
 const App = () => {
@@ -111,29 +115,67 @@ const App = () => {
   };
 
   const pageTransition = {
-    type: "tween",
-    ease: "anticipate",
+    type: "tween" as const,
+    ease: "anticipate" as const,
     duration: 0.6
   };
 
   const renderPage = () => {
+    const LoadingSpinner = () => (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
+      </div>
+    );
+
     switch (currentPage) {
       case 'services':
-        return <Products lang={lang} />;
+        return (
+          <Suspense fallback={<LoadingSpinner />}>
+            <Products lang={lang} />
+          </Suspense>
+        );
       case 'blogs':
-        return <Blogs lang={lang} />;
+        return (
+          <Suspense fallback={<LoadingSpinner />}>
+            <Blogs lang={lang} />
+          </Suspense>
+        );
       case 'blog-post':
-        return <BlogPost lang={lang} postId={blogPostId} />;
+        return (
+          <Suspense fallback={<LoadingSpinner />}>
+            <BlogPost lang={lang} postId={blogPostId} />
+          </Suspense>
+        );
       case 'web-development':
-        return <WebDevelopment />;
+        return (
+          <Suspense fallback={<LoadingSpinner />}>
+            <WebDevelopment />
+          </Suspense>
+        );
       case 'mobile-app-development':
-        return <MobileAppDevelopment />;
+        return (
+          <Suspense fallback={<LoadingSpinner />}>
+            <MobileAppDevelopment />
+          </Suspense>
+        );
       case 'enterprise-erp':
-        return <EnterpriseERP />;
+        return (
+          <Suspense fallback={<LoadingSpinner />}>
+            <EnterpriseERP />
+          </Suspense>
+        );
       case 'api-development':
-        return <APIDevelopment />;
+        return (
+          <Suspense fallback={<LoadingSpinner />}>
+            <APIDevelopment />
+          </Suspense>
+        );
       case 'erp-services':
-        return <ERPServices lang={lang} />;
+        return (
+          <Suspense fallback={<LoadingSpinner />}>
+            <ERPServices lang={lang} />
+          </Suspense>
+        );
       default:
         return <Index lang={lang} onLanguageChange={handleLanguageChange} />;
     }
@@ -161,6 +203,7 @@ const App = () => {
       <Footer lang={lang} onLanguageChange={handleLanguageChange} />
       <CookieBanner />
       <Toaster />
+      {/* <PerformanceMonitor /> */}
     </div>
   );
 };

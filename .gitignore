@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# Large video files
+public/videos/final.mp4

@@ -1,10 +1,13 @@
 import { X, MoreHorizontal } from 'lucide-react';
+import { useTranslation } from '@/lib/i18n';
 
 interface TestimonialSidebarProps {
   lang: 'en' | 'ar';
 }
 
 export const TestimonialSidebar = ({ lang }: TestimonialSidebarProps) => {
+  const t = useTranslation(lang);
+  
   return (
     <div className="relative">
       {/* Background Pattern */}
@@ -38,7 +41,7 @@ export const TestimonialSidebar = ({ lang }: TestimonialSidebarProps) => {
         {/* Testimonial Content */}
         <div className="mb-4">
           <p className="text-gray-700 text-sm leading-relaxed">
-            Creative Network delivered an exceptional ERP system that transformed our business operations. Their team's expertise in modern technologies and attention to detail is unmatched. Highly recommended for enterprise solutions.
+            {t.testimonialText}
           </p>
         </div>
         
@@ -48,8 +51,8 @@ export const TestimonialSidebar = ({ lang }: TestimonialSidebarProps) => {
             <span className="text-white text-xs font-medium">CN</span>
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-900">Creative Network</p>
-            <p className="text-xs text-gray-500">Client Testimonial</p>
+            <p className="text-sm font-medium text-gray-900">{t.creativeNetwork}</p>
+            <p className="text-xs text-gray-500">{t.clientTestimonial}</p>
           </div>
         </div>
       </div>

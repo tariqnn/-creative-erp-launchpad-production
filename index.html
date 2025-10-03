@@ -8,6 +8,21 @@
     <meta name="author" content="Creative Network" />
     <meta name="keywords" content="ERP, SaaS, business management, mobile apps, custom websites, Creative Network, شبكة الإبداع" />
     
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//images.unsplash.com" />
+    <link rel="dns-prefetch" href="//videos.unsplash.com" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/videos/hero-video.mp4" as="video" type="video/mp4" />
+    <link rel="preload" href="/images/video-poster.jpg" as="image" />
+    
+    <!-- Resource hints for better performance -->
+    <link rel="prefetch" href="/videos/introduction-video.mp4" />
+    <link rel="prefetch" href="/images/blog-header.jpg" />
+    <link rel="prefetch" href="/images/services-header.jpg" />
+    
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -17,6 +32,17 @@
     <meta property="og:type" content="website" />
 
     <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- Performance monitoring -->
+    <script>
+      // Simple performance monitoring
+      window.addEventListener('load', function() {
+        if ('performance' in window) {
+          const perfData = performance.getEntriesByType('navigation')[0];
+          console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+        }
+      });
+    </script>
   </head>
 
   <body>

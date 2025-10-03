@@ -236,3 +236,8 @@ export const MobileShortcuts = ({ lang }: MobileShortcutsProps) => {
     </AnimatePresence>
   );
 };
+
+
+
+
+

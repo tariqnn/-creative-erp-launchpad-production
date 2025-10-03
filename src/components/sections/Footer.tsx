@@ -26,7 +26,7 @@ export const Footer = ({ lang, onLanguageChange }: FooterProps) => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-black">
+            <h3 className="text-2xl font-bold text-foreground">
               {t.creativeNetwork}
             </h3>
             <p className="text-muted-foreground">

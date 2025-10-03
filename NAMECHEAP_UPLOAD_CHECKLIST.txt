@@ -1,0 +1,64 @@
+🌐 NAMECHEAP UPLOAD CHECKLIST
+============================
+
+📁 FILES TO UPLOAD TO PUBLIC_HTML:
+==================================
+
+✅ REQUIRED FILES:
+- index.html (2,893 bytes)
+- favicon.ico (7,645 bytes)
+- favicon.svg (923 bytes)
+- robots.txt (160 bytes)
+- sw.js (3,359 bytes)
+- placeholder.svg (3,253 bytes)
+
+✅ FOLDERS TO UPLOAD:
+- assets/ (contains all CSS/JS files)
+- videos/ (contains video files)
+
+✅ IMAGES TO UPLOAD:
+- blog-header.jpg (4,621,989 bytes)
+- services-header.jpg (2,939,472 bytes)
+
+🔧 .HTACCESS FILE CONTENT:
+==========================
+
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+# Security headers
+Header always set X-Frame-Options DENY
+Header always set X-Content-Type-Options nosniff
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Cache static assets
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg)$">
+    ExpiresActive On
+    ExpiresDefault "access plus 1 year"
+</FilesMatch>
+
+📋 UPLOAD STEPS:
+================
+
+1. Login to Namecheap account
+2. Go to "Hosting List" > "Manage"
+3. Click "File Manager"
+4. Navigate to "public_html" folder
+5. Delete any default files (index.html, etc.)
+6. Upload ALL files from your "dist" folder
+7. Create .htaccess file with content above
+8. Set file permissions: 644 for files, 755 for folders
+9. Go to "SSL" tab and enable free SSL
+10. Wait 24-48 hours for DNS propagation
+
+🎯 FINAL RESULT:
+================
+Your website will be live at: https://yourdomain.com
+
+Total cost: ~$43/year (domain + hosting)
+Includes: SSL certificate, email accounts, 20GB storage

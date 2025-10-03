@@ -1,17 +1,20 @@
 import { Button } from '@/components/ui/button';
 import { ArrowUpRight } from 'lucide-react';
-import { Language } from '@/lib/i18n';
+import { Language, useTranslation } from '@/lib/i18n';
 import { TestimonialSidebar } from '@/components/TestimonialSidebar';
 import { AnimatedWrapper, StaggeredWrapper, StaggeredItem } from '@/components/AnimatedWrapper';
 import { Logo } from '@/components/Logo';
 import { BrandPattern, BrandWatermark } from '@/components/BrandPattern';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 interface HeroProps {
   lang: Language;
 }
 
 export const Hero = ({ lang }: HeroProps) => {
+  const t = useTranslation(lang);
+  const shouldReduceMotion = useReducedMotion();
+  
   const scrollToSection = (sectionId: string) => {
     // If we're not on the home page, navigate to home first
     if (window.location.pathname !== '/' && window.location.pathname !== '') {
@@ -115,7 +118,7 @@ export const Hero = ({ lang }: HeroProps) => {
           }}
         />
         {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-white/0.1 backdrop-blur-[0.002px]"></div>
+            <div className="absolute inset-0 bg-background/10 backdrop-blur-[0.002px]"></div>
       </div>
       
       {/* Enhanced Background decoration */}
@@ -267,16 +270,16 @@ export const Hero = ({ lang }: HeroProps) => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.5 }}
                   >
-                    Enterprise Level Development
+                    {t.enterpriseLevelDevelopment}
                   </motion.span>
                   <br />
                   <motion.span 
-                    className="text-black font-serif"
+                    className="text-foreground font-serif"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.7 }}
                   >
-                    Agency For All Technologies
+                    {t.agencyForAllTechnologies}
                   </motion.span>
                 </motion.h1>
               </div>
@@ -290,7 +293,7 @@ export const Hero = ({ lang }: HeroProps) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
               >
-                We specialize in comprehensive web development, mobile application development, and enterprise ERP solutions. Our expert developers create stunning websites, powerful mobile apps, and robust business systems using cutting-edge technologies.
+                {t.heroDescription}
               </motion.p>
             </AnimatedWrapper>
             
@@ -298,12 +301,12 @@ export const Hero = ({ lang }: HeroProps) => {
             <AnimatedWrapper delay={0.6}>
               <div className="space-y-4">
                 <motion.h3 
-                  className="text-lg font-semibold text-gray-800"
+                  className="text-lg font-semibold text-foreground"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 1.1 }}
                 >
-                  Our Development Expertise:
+                  {t.ourDevelopmentExpertise}
                 </motion.h3>
                 <StaggeredWrapper delay={0.1}>
                   <div className="flex flex-wrap gap-3">
@@ -378,14 +381,14 @@ export const Hero = ({ lang }: HeroProps) => {
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   ></motion.div>
-                  <span className="text-gray-600 font-medium">Available 24/7</span>
+                  <span className="text-muted-foreground font-medium">Available 24/7</span>
                 </motion.div>
                 <motion.div 
                   className="flex items-center space-x-2"
                   whileHover={{ scale: 1.05 }}
                 >
                   <motion.span 
-                    className="text-gray-600 font-medium"
+                    className="text-muted-foreground font-medium"
                     animate={{ rotate: [0, 10, -10, 0] }}
                     transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                   >
@@ -393,7 +396,7 @@ export const Hero = ({ lang }: HeroProps) => {
                   </motion.span>
                   <a 
                     href="tel:+962795550073"
-                    className="text-gray-800 font-semibold hover:text-green-600 transition-colors duration-300 cursor-pointer"
+                    className="text-foreground font-semibold hover:text-green-600 transition-colors duration-300 cursor-pointer"
                   >
                     +962795550073
                   </a>

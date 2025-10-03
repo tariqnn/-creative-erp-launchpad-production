@@ -9,10 +9,16 @@ export const translations = {
     blog: 'Blog',
     store: 'Store',
     contact: 'Contact',
+    ourServices: 'Our Services',
+    hireUs: 'Work With Us',
     
     // Hero Section
     heroTitle: 'Transform Your Business Operations',
     heroSubtitle: 'We specialize in web development, mobile applications, and enterprise ERP solutions. Transform your business with our comprehensive development services.',
+    heroDescription: 'We specialize in comprehensive web development, mobile application development, and enterprise ERP solutions. Our expert developers create stunning websites, powerful mobile apps, and robust business systems using cutting-edge technologies.',
+    enterpriseLevelDevelopment: 'Enterprise Level Development',
+    agencyForAllTechnologies: 'Agency For All Technologies',
+    ourDevelopmentExpertise: 'Our Development Expertise:',
     bookDemo: 'Book a Demo',
     getPricing: 'Get Pricing',
     contactUs: 'Contact Us',
@@ -66,8 +72,17 @@ export const translations = {
     formSubmitted: 'Thank you! We\'ll contact you soon.',
     formError: 'Something went wrong. Please try again.',
     
+    // Testimonial
+    testimonialText: 'Creative Network delivered an exceptional ERP system that transformed our business operations. Their team\'s expertise in modern technologies and attention to detail is unmatched. Highly recommended for enterprise solutions.',
+    clientTestimonial: 'Client Testimonial',
+    
+    // Introduction Video
+    introVideoTitle: 'See Us In Action',
+    introVideoDescription: 'Watch our introduction video to learn more about our services, team, and how we can help transform your business with cutting-edge technology solutions.',
+    introVideoSubtext: 'Discover our comprehensive approach to web development, mobile applications, and enterprise ERP solutions that drive business growth.',
+    
     // Products/Services Page
-    ourServices: 'Our Services',
+    ourServicesPage: 'Our Services',
     professionalServicesDescription: 'Professional development services tailored to your business needs',
     webDevelopment: 'Web Development',
     webDevelopmentDescription: 'Modern, responsive websites and web applications built with cutting-edge technologies.',
@@ -164,10 +179,16 @@ export const translations = {
     blog: 'المدونة',
     store: 'المتجر',
     contact: 'تواصل معنا',
+    ourServices: 'خدماتنا',
+    hireUs: 'اعمل معنا',
     
     // Hero Section
     heroTitle: 'نظام ERP عند الطلب للفرق سريعة الحركة',
     heroSubtitle: 'نحن متخصصون في تطوير المواقع الإلكترونية وتطبيقات الجوال وحلول ERP المؤسسية. حوّل شركتك بخدمات التطوير الشاملة.',
+    heroDescription: 'نحن متخصصون في تطوير المواقع الإلكترونية الشامل وتطوير تطبيقات الجوال وحلول ERP المؤسسية. مطورونا الخبراء ينشئون مواقع ويب مذهلة وتطبيقات جوال قوية وأنظمة أعمال قوية باستخدام أحدث التقنيات.',
+    enterpriseLevelDevelopment: 'تطوير على مستوى المؤسسات',
+    agencyForAllTechnologies: 'وكالة لجميع التقنيات',
+    ourDevelopmentExpertise: 'خبرتنا في التطوير:',
     bookDemo: 'احجز عرضاً تجريبياً',
     getPricing: 'احصل على الأسعار',
     contactUs: 'تواصل معنا',
@@ -221,8 +242,17 @@ export const translations = {
     formSubmitted: 'شكراً لك! سنتواصل معك قريباً.',
     formError: 'حدث خطأ ما. يرجى المحاولة مرة أخرى.',
     
+    // Testimonial
+    testimonialText: 'شبكة الإبداع قدمت نظام ERP استثنائي حول عمليات أعمالنا. خبرة فريقهم في التقنيات الحديثة والاهتمام بالتفاصيل لا مثيل لها. موصى به بشدة للحلول المؤسسية.',
+    clientTestimonial: 'شهادة عميل',
+    
+    // Introduction Video
+    introVideoTitle: 'شاهدنا في العمل',
+    introVideoDescription: 'شاهد فيديو التعريف الخاص بنا لمعرفة المزيد عن خدماتنا وفريقنا وكيف يمكننا المساعدة في تحويل عملك بحلول تقنية متطورة.',
+    introVideoSubtext: 'اكتشف نهجنا الشامل لتطوير المواقع الإلكترونية وتطبيقات الجوال وحلول ERP المؤسسية التي تدفع نمو الأعمال.',
+    
     // Products/Services Page
-    ourServices: 'خدماتنا',
+    ourServicesPage: 'خدماتنا',
     professionalServicesDescription: 'خدمات تطوير مهنية مصممة خصيصاً لاحتياجات عملك',
     webDevelopment: 'تطوير المواقع الإلكترونية',
     webDevelopmentDescription: 'مواقع ويب وتطبيقات ويب حديثة ومتجاوبة مبنية بأحدث التقنيات.',

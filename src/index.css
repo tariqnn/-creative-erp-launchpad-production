@@ -86,44 +86,6 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 95%;
-    
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 95%;
-    
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 95%;
-    
-    --primary: 25 95% 53%;
-    --primary-foreground: 0 0% 100%;
-    
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 90%;
-    
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
-    
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 90%;
-    
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
-    
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 25 95% 53%;
-    
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
 }
 
 @layer base {
@@ -132,7 +94,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-white text-gray-900 font-sans antialiased;
     /* Mobile optimizations */
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
@@ -193,15 +155,24 @@
   
   /* Brand Cards */
   .card-brand {
-    @apply bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300;
-    background: linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
+    @apply bg-card border-0 shadow-lg hover:shadow-xl transition-all duration-300;
+    background: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--card)) 100%);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(37, 99, 235, 0.1);
+    border: 1px solid hsl(var(--border));
   }
   
   .card-brand:hover {
-    border-color: rgba(37, 99, 235, 0.2);
+    border-color: hsl(var(--primary));
     transform: translateY(-2px);
+  }
+  
+  .dark .card-brand {
+    background: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--card)) 100%);
+    border: 1px solid hsl(var(--border));
+  }
+  
+  .dark .card-brand:hover {
+    border-color: hsl(var(--primary));
   }
   
   /* Brand Buttons - Orange & Blue Theme */
@@ -308,6 +279,7 @@
       radial-gradient(circle at 80% 20%, hsl(var(--brand-orange-100)) 0%, transparent 50%),
       radial-gradient(circle at 40% 40%, hsl(var(--brand-blue-50)) 0%, transparent 50%);
   }
+  
 }
 
 @keyframes brandPulse {

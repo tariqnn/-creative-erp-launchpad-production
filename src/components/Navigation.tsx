@@ -87,13 +87,13 @@ export const Navigation = ({ lang, onLanguageChange }: NavigationProps) => {
               className="border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-2 font-semibold"
               onClick={() => handleNavigation('/services')}
             >
-              Our Services
+              {t.ourServices}
             </Button>
                 <Button 
                   className="btn-brand-secondary px-6 py-2 font-semibold"
               onClick={() => handleNavigation('#contact')}
             >
-              Hire Us
+              {t.hireUs}
             </Button>
           </div>
           
@@ -133,13 +133,13 @@ export const Navigation = ({ lang, onLanguageChange }: NavigationProps) => {
                   className="w-full border-gray-300 text-gray-700 hover:bg-gray-50 py-3 font-semibold"
                   onClick={() => handleNavigation('/services')}
                 >
-                  Our Services
+                  {t.ourServices}
                 </Button>
                     <Button 
                       className="w-full btn-brand-secondary py-3 font-semibold"
                   onClick={() => handleNavigation('#contact')}
                 >
-                  Hire Us
+                  {t.hireUs}
                 </Button>
               </div>
             </div>
