@@ -123,7 +123,7 @@ export const IntroductionVideo = ({ lang }: IntroductionVideoProps) => {
               {/* Your YouTube Video Embed - Clean */}
               <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.youtube.com/embed/mUqlunBU7Js?autoplay=0&mute=1&controls=1&loop=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&title=0&byline=0&portrait=0"
+                  src="https://www.youtube.com/embed/mUqlunBU7Js?autoplay=0&mute=1&controls=1&loop=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&title=0&byline=0&portrait=0&cc_load_policy=0&fs=1&disablekb=0&enablejsapi=0&origin=https://yourdomain.com"
                   className="absolute inset-0 w-full h-full"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
