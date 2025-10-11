@@ -103,6 +103,16 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    /* Prevent horizontal overflow on mobile */
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
   }
 
   /* Allow text selection for content areas */
@@ -385,5 +395,45 @@
   
   .space-mobile-lg {
     gap: 1.5rem;
+  }
+
+  /* Mobile container fixes */
+  .mobile-container {
+    width: 100%;
+    max-width: 100vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Prevent horizontal overflow on all elements */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Mobile form fixes */
+  @media (max-width: 768px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .grid {
+      gap: 1rem;
+    }
+    
+    input, textarea, select {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    /* Ensure all sections are properly contained */
+    section {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+    }
   }
 }

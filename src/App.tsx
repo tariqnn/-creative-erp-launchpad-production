@@ -182,7 +182,7 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <Navigation lang={lang} onLanguageChange={handleLanguageChange} />
       
       <main>

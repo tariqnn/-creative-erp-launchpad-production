@@ -92,8 +92,8 @@ export const Contact = ({ lang }: ContactProps) => {
   };
 
   return (
-    <section className="py-20 px-4 bg-secondary/30">
-      <div className="container mx-auto">
+    <section className="py-20 px-4 bg-secondary/30 overflow-x-hidden">
+      <div className="container mx-auto max-w-full">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
             {t.contactTitle}
@@ -101,7 +101,7 @@ export const Contact = ({ lang }: ContactProps) => {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-700 mx-auto rounded-full" />
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto w-full">
           {/* Contact Information */}
           <div className="space-y-8">
             <Card className="gradient-card border-0 shadow-card">
@@ -171,22 +171,6 @@ export const Contact = ({ lang }: ContactProps) => {
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center">
-                    <MapPin className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-medium">
-                      {lang === 'en' ? 'Office' : 'المكتب'}
-                    </p>
-                    <p className="text-muted-foreground">
-                      {lang === 'en' 
-                        ? '123 Business Street, Tech City, TC 12345'
-                        : '123 شارع الأعمال، المدينة التقنية، TC 12345'
-                      }
-                    </p>
-                  </div>
-                </div>
               </CardContent>
             </Card>
           </div>
@@ -206,7 +190,7 @@ export const Contact = ({ lang }: ContactProps) => {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="fullName">{t.fullName}</Label>
                     <Input
@@ -214,6 +198,7 @@ export const Contact = ({ lang }: ContactProps) => {
                       value={formData.fullName}
                       onChange={(e) => handleInputChange('fullName', e.target.value)}
                       required
+                      className="w-full"
                     />
                   </div>
                   <div className="space-y-2">
@@ -224,11 +209,12 @@ export const Contact = ({ lang }: ContactProps) => {
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
                       required
+                      className="w-full"
                     />
                   </div>
                 </div>
                 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="phone">{t.phone}</Label>
                     <Input
@@ -236,6 +222,7 @@ export const Contact = ({ lang }: ContactProps) => {
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
                       required
+                      className="w-full"
                     />
                   </div>
                   <div className="space-y-2">
@@ -245,6 +232,7 @@ export const Contact = ({ lang }: ContactProps) => {
                       value={formData.company}
                       onChange={(e) => handleInputChange('company', e.target.value)}
                       required
+                      className="w-full"
                     />
                   </div>
                 </div>
