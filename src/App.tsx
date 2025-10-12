@@ -4,7 +4,9 @@ import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/sections/Footer';
 import { CookieBanner } from '@/components/CookieBanner';
 import { Toaster } from '@/components/ui/toaster';
-// import { PerformanceMonitor } from '@/components/PerformanceMonitor';
+import { SEOHead, SEOConfigs } from '@/components/SEOHead';
+import { GoogleAnalytics } from '@/components/GoogleAnalytics';
+import { PerformanceMonitor } from '@/components/PerformanceMonitor';
 import { lazy, Suspense } from 'react';
 import Index from '@/pages/Index';
 
@@ -181,8 +183,28 @@ const App = () => {
     }
   };
 
+  const getSEOConfig = () => {
+    switch (currentPage) {
+      case 'services':
+        return SEOConfigs.services;
+      case 'web-development':
+        return SEOConfigs.webDevelopment;
+      case 'mobile-app-development':
+        return SEOConfigs.mobileAppDevelopment;
+      case 'erp-services':
+        return SEOConfigs.erpServices;
+      case 'blogs':
+        return SEOConfigs.blogs;
+      default:
+        return SEOConfigs.home;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
+      <SEOHead {...getSEOConfig()} />
+      <GoogleAnalytics measurementId="G-XXXXXXXXXX" />
+      <PerformanceMonitor analyticsId="G-XXXXXXXXXX" />
       <Navigation lang={lang} onLanguageChange={handleLanguageChange} />
       
       <main>
@@ -203,7 +225,6 @@ const App = () => {
       <Footer lang={lang} onLanguageChange={handleLanguageChange} />
       <CookieBanner />
       <Toaster />
-      {/* <PerformanceMonitor /> */}
     </div>
   );
 };

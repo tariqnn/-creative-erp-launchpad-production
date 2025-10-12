@@ -15,4 +15,24 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+// Add resource hints for better performance
+const addResourceHints = () => {
+  const hints = [
+    { rel: 'dns-prefetch', href: '//fonts.googleapis.com' },
+    { rel: 'dns-prefetch', href: '//fonts.gstatic.com' },
+    { rel: 'dns-prefetch', href: '//www.google-analytics.com' },
+    { rel: 'dns-prefetch', href: '//www.googletagmanager.com' },
+  ];
+
+  hints.forEach(({ rel, href }) => {
+    const link = document.createElement('link');
+    link.rel = rel;
+    link.href = href;
+    document.head.appendChild(link);
+  });
+};
+
+// Initialize performance optimizations
+addResourceHints();
+
 createRoot(document.getElementById("root")!).render(<App />);
